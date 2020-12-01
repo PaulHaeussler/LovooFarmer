@@ -31,15 +31,15 @@ public class OverseerThread implements Runnable {
             String name = tmp2[tmp2.length - 1].split("\\?")[0];
             String[] tmp3 = name.split("\\.");
 
-            if(new File(path + "\\" + fileName + "." + tmp3[tmp3.length - 1]).exists()) throw new FileAlreadyExistsException(null);
+            if(new File(path + "/" + fileName + "." + tmp3[tmp3.length - 1]).exists()) throw new FileAlreadyExistsException(null);
 
             System.out.println("Opening input stream");
             InputStream in = new URL(iUrl).openStream();
 
 
-            File dir = new File(path + "\\");
+            File dir = new File(path + "/");
             if(!dir.exists()) dir.mkdir();
-            Files.copy(in, Paths.get(path + "\\" + fileName + "." + tmp3[tmp3.length - 1]));
+            Files.copy(in, Paths.get(path + "/" + fileName + "." + tmp3[tmp3.length - 1]));
         } catch (FileAlreadyExistsException e){
             Printer.printToLog("Img exists, skipping...", Printer.LOGTYPE.DEBUG);
         } catch (Exception e){

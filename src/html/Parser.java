@@ -115,6 +115,7 @@ public class Parser {
 
 
         parseProfile(p);
+
         profiles.add(p);
     }
 
@@ -235,6 +236,7 @@ public class Parser {
         if(page.length() <= 25) return;
 
         String[] tmp = page.split("\"_type\":\"story\",");
+        System.out.println(tmp.length);
         for(int i = 1; i < tmp.length; i++){
             if(page.contains("thumb")) continue;
             String h = getPassage(tmp[i], "\"images\":\\[\\{\"url\":\"https:\\\\/\\\\/img\\.lovoo\\.com\\\\/moments\\\\/", "jpg\"");
