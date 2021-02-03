@@ -36,6 +36,7 @@ public class Parser {
         }
     }
 
+
     private int parseAPIpage(String url) throws Exception {
         String page = LovooConnection.getPage(url);
         if(page.contains("\"response\":{\"result\":[],\"allCount\":0}")) return -1; //validate valid response
@@ -231,16 +232,17 @@ public class Parser {
 
 
 
-    private void parseImages(LovooProfile p) throws Exception {
+    public void parseImages(LovooProfile p) throws Exception {
         String page = getResponse(p.hash, "feed?resultLimit=14");
         if(page.length() <= 25) return;
 
         String[] tmp = page.split("\"_type\":\"story\",");
-        System.out.println(tmp.length);
         for(int i = 1; i < tmp.length; i++){
-            if(page.contains("thumb")) continue;
-            String h = getPassage(tmp[i], "\"images\":\\[\\{\"url\":\"https:\\\\/\\\\/img\\.lovoo\\.com\\\\/moments\\\\/", "jpg\"");
-            h = h.split("\\\\/")[0];
+            if(!tmp[i].substring(0, 5).equals("\"id\":")) continue;
+            String t = tmp[i].split("\",\"")[0];
+            String tt = t.substring(6);
+            String h  = tt.split("_")[1];
+            System.out.println(h);
             LovooImage img = new LovooImage(p, h, i + "");
             img.downloadImage(new String("https://img.lovoo.com/moments/" + h + "/image.jpg").replace("\\", ""));
             p.images.add(img);

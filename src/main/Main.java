@@ -3,6 +3,7 @@ package main;
 import db.Database;
 import db.DatabaseSetup;
 import html.LovooConnection;
+import html.LovooImage;
 import html.LovooProfile;
 import html.Parser;
 import util.Printer;
@@ -35,7 +36,13 @@ public class Main {
             parser = new Parser();
             DatabaseSetup.checkSetup();
 
-
+            /*
+            LovooProfile lf = new LovooProfile();
+            lf.hash = "5fa6e910c4564f57e528b466";
+            lf.images = new ArrayList<LovooImage>();
+            parser.parseImages(lf);
+            */
+            
 
             parser.parseMainPage(3, 100);
 
