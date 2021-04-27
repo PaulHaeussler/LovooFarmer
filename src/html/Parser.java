@@ -1,22 +1,10 @@
 package html;
 
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Worker;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import main.Main;
-import org.w3c.dom.Document;
 import util.Printer;
 
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.OutputStreamWriter;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
