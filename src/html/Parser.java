@@ -179,7 +179,7 @@ public class Parser {
                     p.flirtInterests + "', '" +
                     p.options + "', '" +
                     p.current_location + "', '" +
-                    p.current_distance + ", " +
+                    p.current_distance + "', '" +
                     p.home_location + "', '" +
                     p.home_country + "', " +
                     p.home_distance + ", '" +
