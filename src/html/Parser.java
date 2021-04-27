@@ -190,12 +190,12 @@ public class Parser {
                     p.isVIP + ", '" +
                     p.flirtInterests + "', '" +
                     p.options + "', '" +
+                    p.current_location + "', '" +
+                    p.current_distance + ", " +
                     p.home_location + "', '" +
                     p.home_country + "', " +
                     p.home_distance + ", '" +
-                    p.current_location + "', '" +
                     p.current_country + "', " +
-                    p.current_distance + ", " +
                     p.isNew + ", " +
                     p.isOnline + ", " +
                     p.isMobile + ", " +

@@ -42,7 +42,7 @@ public class Main {
             lf.images = new ArrayList<LovooImage>();
             parser.parseImages(lf);
             */
-            
+
 
             parser.parseMainPage(3, 100);
 
