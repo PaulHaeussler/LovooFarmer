@@ -85,7 +85,7 @@ public class Parser {
         p.isMobile = getPassage(rs, ",\"isMobile\":", ",\"isHighlighted\":");
         p.isHighlighted = getPassage(rs, ",\"isHighlighted\":", ",\"picture\":\"");
         p.pic_hash = getPassage(rs, ",\"picture\":\"", "\",\"images\":\\[");
-        p.isVerified  = getPassage(rs, ",\"isVerified\":", ",\"verifications\":\\{");
+        p.isVerified  = getPassage(rs, ",\"isVerified\":", "\\},");
         p.verifications = getPassage(rs, ",\"verifications\":\\{", "}}");
 
         p.last_checked = Printer.getTimeNow();
